@@ -1,7 +1,7 @@
 Package: moe.misty.surge4-advanced
 Name: Surge4Advanced
 Version: 0.0.3
-Architecture: iphoneos-arm
+Architecture: iphoneos-arm64
 Description: An awesome MobileSubstrate tweak!
 Maintainer: misty
 Author: misty
