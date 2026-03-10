@@ -3,7 +3,7 @@ name: Theos CI
 on:
   push:
     # Trigger on the "new" branch
-    branches: [ "new" ]
+    #branches: [ "new" ]
     # tags:
     #   - 'v*'
   release:
