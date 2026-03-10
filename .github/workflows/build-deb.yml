@@ -3,8 +3,8 @@ name: Theos CI
 on:
   push:
     tags:
-      - 'v*'
-    branches: [ master ]
+      #- 'v*'
+    #branches: [ master ]
 
 jobs:
   build:
