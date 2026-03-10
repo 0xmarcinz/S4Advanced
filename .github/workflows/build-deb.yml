@@ -9,9 +9,11 @@ on:
 jobs:
   build:
     runs-on: macos-latest
+    
+    permissions:
+      contents: write 
 
     steps:
-    # Updated from v2 to v4
     - uses: actions/checkout@v4
       with:
         submodules: recursive
@@ -24,7 +26,6 @@ jobs:
 
     - name: Use cache
       id: cache
-      # Updated from v2 to v4
       uses: actions/cache@v4
       with:
         path: ${{ github.workspace }}/theos
@@ -39,10 +40,11 @@ jobs:
         make package FINALPACKAGE=1
 
     - name: Release
-      # Updated from v1 to v2
       uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: ${{ github.workspace }}/packages/*.deb
+      # Note: softprops/action-gh-release@v2 automatically uses the standard token,
+      # but leaving your env definition here is perfectly fine.
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
