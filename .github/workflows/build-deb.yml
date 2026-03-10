@@ -41,7 +41,7 @@ jobs:
 
     - name: Release
       uses: softprops/action-gh-release@v2
-      if: startsWith(github.ref, 'refs/tags/')
+      # if: startsWith(github.ref, 'refs/tags/')
       with:
         files: ${{ github.workspace }}/packages/*.deb
       # Note: softprops/action-gh-release@v2 automatically uses the standard token,
