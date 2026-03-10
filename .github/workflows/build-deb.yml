@@ -44,6 +44,8 @@ jobs:
       # if: startsWith(github.ref, 'refs/tags/')
       with:
         files: ${{ github.workspace }}/packages/*.deb
+        tag_name: "latest"
+        name: "Latest Build"
       # Note: softprops/action-gh-release@v2 automatically uses the standard token,
       # but leaving your env definition here is perfectly fine.
       env:
